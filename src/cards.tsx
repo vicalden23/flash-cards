@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@mui/material';
+import { styled, Theme, useTheme } from '@mui/material';
 
 const Text = styled('p')({
   position: 'relative',
@@ -9,6 +9,26 @@ const Text = styled('p')({
   lineHeight: '1.5',
   fontSize: '22px',
 });
+
+const LongText = styled('p')(({ theme }: { theme: Theme }) => ({
+  position: 'relative',
+  margin: '16px',
+  fontSize: '20px',
+  [theme.breakpoints.up('md')]: {
+    margin: '16px 40px',
+    lineHeight: '1.5',
+    fontSize: '22px',
+  },
+}));
+
+function TextComponent({ text }: { text: string }) {
+  const muiTheme = useTheme();
+  return (
+    <div style={{ height: 'inherit', overflowY: 'scroll' }}>
+      <LongText theme={muiTheme}>{text}</LongText>
+    </div>
+  );
+}
 
 export const cards = [
   {
@@ -119,18 +139,18 @@ export const cards = [
   },
   {
     id: 14,
-    frontHTML: <Text>Explain transfor of risk</Text>,
+    frontHTML: <Text>Explain transfer of risk</Text>,
     backHTML: (
-      <Text>
-        This is what happens with insurance. The insurer agrees to pay if an
-        individual or business has a loss. Insurance companies use the risk
-        management method of transfer to spread a risk of loss among thousands
-        if not millions of insureds. Not everyone will experience an accident
-        while they own an insurance policy. The large number of insureds who do
-        not have an accident will be paying for the losses of the few who do
-        have an accident. This is the only way that insurance can work and make
-        the premiums affordable.
-      </Text>
+      <TextComponent
+        text="This is what happens with insurance. The insurer agrees to pay if an
+          individual or business has a loss. Insurance companies use the risk
+          management method of transfer to spread a risk of loss among thousands
+          if not millions of insureds. Not everyone will experience an accident
+          while they own an insurance policy. The large number of insureds who
+          do not have an accident will be paying for the losses of the few who
+          do have an accident. This is the only way that insurance can work and
+          make the premiums affordable."
+      />
     ),
   },
   {
