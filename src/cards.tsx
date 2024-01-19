@@ -21,7 +21,7 @@ const LongText = styled('p')(({ theme }: { theme: Theme }) => ({
   },
 }));
 
-function TextComponent({ text }: { text: string }) {
+function LongTextWrapper({ text }: { text: string }) {
   const muiTheme = useTheme();
   return (
     <div style={{ height: 'inherit', overflowY: 'scroll' }}>
@@ -70,12 +70,7 @@ export const cards = [
   {
     id: 6,
     frontHTML: <Text>What is loss?</Text>,
-    backHTML: (
-      <Text>
-        Reduction in value of an asset. The amount of loss is the value before
-        loss minus value after loss
-      </Text>
-    ),
+    backHTML: <Text>Reduction in value of an asset</Text>,
   },
   {
     id: 7,
@@ -141,7 +136,7 @@ export const cards = [
     id: 14,
     frontHTML: <Text>Explain transfer of risk</Text>,
     backHTML: (
-      <TextComponent
+      <LongTextWrapper
         text="This is what happens with insurance. The insurer agrees to pay if an
           individual or business has a loss. Insurance companies use the risk
           management method of transfer to spread a risk of loss among thousands
@@ -265,8 +260,211 @@ export const cards = [
     ),
   },
   {
-    id: 25,
-    frontHTML: <Text>Elements of insurable risk - Explain Calculable</Text>,
-    backHTML: <Text>The individual will pay for the loss if it occurs.</Text>,
+    id: 26,
+    frontHTML: <Text>What is adverse selection?</Text>,
+    backHTML: (
+      <Text>Risks that have a greater than average chance of loss</Text>
+    ),
+  },
+  {
+    id: 27,
+    frontHTML: <Text>What is underwriting?</Text>,
+    backHTML: (
+      <Text>
+        If an underwriter determines that the risk is higher than average, the
+        insurer may charge a higher rate to insure risk, limit the amount of
+        coverage, or refuse the application altogether in order to avoid adverse
+        selection
+      </Text>
+    ),
+  },
+  {
+    id: 28,
+    frontHTML: <Text>What is reinsurance?</Text>,
+    backHTML: (
+      <LongTextWrapper
+        text="
+          Insurance for insurers. It transfers risk from one insurer to another
+          insurer in order to reduce the total amount of loss it is liable for.
+          The company reducing its risk is called the ceding insurer and the
+          company assuming the risk is the reinsurer. ex. Protect insurance
+          company from catastrophic losses in certain geographical areas
+      "
+      />
+    ),
+  },
+  {
+    id: 29,
+    frontHTML: <Text>What is facultative reinsurance?</Text>,
+    backHTML: (
+      <Text>
+        The reinsurer evaluates each risk before allowing the transfer.
+      </Text>
+    ),
+  },
+  {
+    id: 30,
+    frontHTML: <Text>What is treaty reinsurance?</Text>,
+    backHTML: (
+      <Text>
+        The reinsurer accepts the transfer according to an agreement called a
+        treaty.
+      </Text>
+    ),
+  },
+  {
+    id: 31,
+    frontHTML: <Text>What are stock insurers?</Text>,
+    backHTML: (
+      <Text>
+        - Owned by stockholders aka shareholders.
+        <br />
+        - Board of directors chosen by stockholders
+        <br />
+        - If the company makes money, a taxable dividend from the profits may be
+        paid to stockholders
+        <br />- Issues non-participating, or non-par, policies
+      </Text>
+    ),
+  },
+  {
+    id: 32,
+    frontHTML: <Text>What are mutual insurers?</Text>,
+    backHTML: (
+      <Text>
+        - Owned by policyholders/policyowners (customers)
+        <br />
+        - Board of directors chosen by policyholders
+        <br />
+        - If the company is profitable, excess premiums can be returned to its
+        policyholders (nontaxable dividend)
+        <br />- Issues participating, or par, policies
+      </Text>
+    ),
+  },
+  {
+    id: 33,
+    frontHTML: <Text>What are fraternal benefit societies?</Text>,
+    backHTML: (
+      <Text>
+        - Exist for the benefit of its members.
+        <br />
+        - Fraternal policies are called certificates, and members who own life
+        insurance are called certificate holders.
+        <br />
+        - Certificate holders may be assessed additional charges if premiums are
+        not sufficient. These are called open contracts.
+        <br />
+      </Text>
+    ),
+  },
+  {
+    id: 34,
+    frontHTML: <Text>What are reciprocal insurers?</Text>,
+    backHTML: (
+      <Text>
+        - Unincorporated groups of people called subscribers
+        <br />
+        - Members/subscribers are assessed the amount they have to pay if a loss
+        to any member of the group occurs
+        <br />
+        - Run by an attorney-in-fact
+        <br />
+      </Text>
+    ),
+  },
+  {
+    id: 36,
+    frontHTML: <Text>What are risk retention groups (RRG)?</Text>,
+    backHTML: (
+      <Text>
+        Liability insurance company created for policyholders from the same
+        industry. ex. a car dealers RRG - only car dealers can be policy holders
+      </Text>
+    ),
+  },
+  {
+    id: 35,
+    frontHTML: <Text>What are Lloyds associations?</Text>,
+    backHTML: (
+      <Text>
+        Insurance provided by individual underwriters, not insurance companies.
+        Lloyd's associations have insured unusual risks such as the hair of
+        athletes and body parts of celecbrities.
+      </Text>
+    ),
+  },
+  {
+    id: 37,
+    frontHTML: <Text>What are self-insurers?</Text>,
+    backHTML: (
+      <Text>
+        Retaining rather than transferring risk. A business that pays its own
+        claims.
+      </Text>
+    ),
+  },
+  {
+    id: 38,
+    frontHTML: <Text>What is the residual market?</Text>,
+    backHTML: <Text>Insurance from the state or federal government.</Text>,
+  },
+  {
+    id: 39,
+    frontHTML: <Text>Explain domestic, foreign, and alien insurers.</Text>,
+    backHTML: (
+      <Text>
+        Domestic - the state where a company is incorporated (home state)
+        <br />
+        Foreign - any state or US territory other than the state where
+        incorporated (another state)
+        <br />
+        Alien - incorporated in any country other than USA (another country)
+      </Text>
+    ),
+  },
+  {
+    id: 40,
+    frontHTML: <Text>Authorized vs. unauthorized insurers</Text>,
+    backHTML: (
+      <Text>
+        Authorized - Admitted, authorized, or approved is when the state
+        requires the insurance company to have a Certificate of Authority (a
+        state license for an insurance company)
+        <br />
+        Unauthorized - Non-admitted, unauthorized, nonapproved is when the
+        insurance company is not requred to have a Certificate of Authority
+      </Text>
+    ),
+  },
+  {
+    id: 41,
+    frontHTML: <Text>What are surplus lines insurers?</Text>,
+    backHTML: (
+      <Text>
+        - Insurance sold by unauthorized insurers.
+        <br />
+        - Can only be sold to certain high risk insureds.
+        <br />
+        - Can't be sold just for a cheaper rate than licensed/admitted insurers.
+        <br />
+        Exposure examples - casinos and entertainment, mining, etc
+      </Text>
+    ),
+  },
+  {
+    id: 42,
+    frontHTML: <Text>What is a financial strength rating?</Text>,
+    backHTML: (
+      <Text>
+        A report card of the company
+        <br />
+        A++ - superior
+        <br />
+        AAA - exceptionally strong
+        <br />
+        Aaa - exceptional
+      </Text>
+    ),
   },
 ];
